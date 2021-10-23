@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>Agregar - Actualizar Usuario</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body>
+        <h:form id="formAgregarUsuario">
+            <h:outputText value="Usuario_Id: "/>  
+            <h:inputText  id="itUsuario" disabled="#{MBeanGeneral.activarCampo}" value="#{MBeanGeneral.usuario.usuario_id}"/>
+            <br></br><br></br>
+            <h:outputText value="Nombres: "/>  
+            <h:inputText  id="itNombres" 
+                          required="true" 
+                          requiredMessage="Debes ingresar nombres" 
+                          value="#{MBeanGeneral.usuario.nombres}"/>
+            <br></br><br></br>
+            <h:outputText value="Apellidos: "/>
+            <h:inputText  id="itApellidos" 
+                          required="true" 
+                          requiredMessage="Debes ingresar apellidos"
+                          value="#{MBeanGeneral.usuario.apellidos}"/>    
+            <br></br><br></br>
+            <h:commandButton value="Grabar" action="#{MBeanGeneral.Grabar}"/> 
+            &#160;
+            <h:outputText value="#{MBeanGeneral.respuesta}"/>
+            <br></br><br></br>
+            <a href="index.xhtml">Regresar Menu</a>
+        </h:form>
+    </h:body>
+</html>

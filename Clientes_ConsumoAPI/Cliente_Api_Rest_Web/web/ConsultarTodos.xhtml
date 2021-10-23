@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Consultar Todos</title>
+    </h:head>
+    <h:body>
+        <h:form id="formMenu">
+            <h:dataTable border="2" var="car" value="#{MBeanConsultarTodo.listadoGeneral}">
+              <h:column>
+                <f:facet name="header">
+                   <h:outputText value="ID"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{car.usuario_id}"></h:outputText>
+             </h:column>
+                
+             <h:column>
+                <f:facet name="header">
+                   <h:outputText value="Nombres"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{car.nombres}"></h:outputText>
+             </h:column>
+   
+             <h:column>
+                <f:facet name="header">
+                   <h:outputText value="Apellidos"></h:outputText>
+                </f:facet>
+                <h:outputText value="#{car.apellidos}"></h:outputText>
+             </h:column>
+
+                <h:column>
+                    <f:facet name="header">
+                       <h:outputText value="Accion"></h:outputText>
+                    </f:facet>
+                    <h:commandButton value="Editar" action="#{MBeanGeneral.Editar(car.usuario_id)}"/>
+                    <h:commandButton value="Eliminar" action="#{MBeanGeneral.Eliminar(car.usuario_id)}"/>
+                </h:column>
+            </h:dataTable>
+            <br></br><br></br>
+            <a href="index.xhtml">Regresar Menu</a>
+        </h:form>                 
+    </h:body>
+</html>
