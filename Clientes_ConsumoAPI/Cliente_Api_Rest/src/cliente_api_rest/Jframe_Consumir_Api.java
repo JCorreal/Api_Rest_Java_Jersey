@@ -453,9 +453,15 @@ public class Jframe_Consumir_Api extends javax.swing.JFrame {
         }
         Gson gson = new Gson();
         Properties properties = gson.fromJson(fichero, Properties.class);
-        jLabel_Nombres.setText("Nombres: "+properties.get("nombres").toString());
-        jLabel_Apellidos.setText("Apellidos: "+properties.get("apellidos").toString());
-        
+        if (properties.toString().equals("{usuario_id=0}"))
+        {
+            jLabel_Respuesta.setText("Usuario No Existe");
+        }
+        else
+        {
+            jLabel_Nombres.setText("Nombres: "+properties.get("nombres").toString());
+            jLabel_Apellidos.setText("Apellidos: "+properties.get("apellidos").toString());
+        }
 	conn.disconnect();
     }
     catch(Exception e)
