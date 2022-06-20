@@ -418,7 +418,7 @@ public class Jframe_Consumir_Api extends javax.swing.JFrame {
 
     private void jButton_ConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ConsultarActionPerformed
        jLabel_Respuesta.setText("");
-       if (jTextField_ConsultarUsuario.getText().trim().equals(""))
+       if (jTextField_ConsultarUsuario.getText().trim().equals("") || jTextField_ConsultarUsuario.getText().trim().equals("0"))    
        {
           JOptionPane.showMessageDialog(rootPane, "Ingresar Documento", "Consumir API_Rest",javax.swing.JOptionPane.ERROR_MESSAGE);
        }    
